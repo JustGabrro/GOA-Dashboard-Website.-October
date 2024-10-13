@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa Database</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="signup-container">
+        <h2>Sign Up</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <label><input type="radio" name="role" value="moderator" checked> Moderator</label>
+        <label><input type="radio" name="role" value="viewer"> Viewer</label>
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <div class="container hidden" id="dashboard-container">
+        <h2>Dashboard</h2>
+        <button onclick="addStudent()">Add Student</button>
+        <table id="student-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mother's Name</th>
+                    <th>Facebook</th>
+                    <th>Age</th>
+                    <th>Group Leader</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="container hidden" id="add-student-container">
+        <h2>Add Student</h2>
+        <input type="text" id="student-name" placeholder="Student Name" required>
+        <input type="text" id="mothers-name" placeholder="Mother's Name" required>
+        <input type="text" id="facebook" placeholder="Facebook" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <label>Group Leader: 
+            <input type="checkbox" id="group-leader">
+        </label>
+        <button onclick="saveStudent()">Add</button>
+        <button onclick="cancelAdd()">Cancel</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
